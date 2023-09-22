@@ -4,3 +4,4 @@ script.js
 .cache
 .lsp/*.db
 .calva/output-window/
+.compiles-log.edn

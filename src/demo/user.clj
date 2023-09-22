@@ -9,6 +9,10 @@
                                  :let [rc (get-in build-state [:sources src-id])]]
                              (:resource-name rc))]
     (tap> build-state) ; for debugging incorrect shadow compiles
+    (spit ".compiles-log.edn"
+          (str (-> build-state :shadow.build/build-info (dissoc :modules :sources))
+               "\n")
+          :append true)
     (binding [clojure.pprint/*print-right-margin* 20]
       (clojure.pprint/pprint [:compiled (sort compiled-resources)]))
     build-state))
