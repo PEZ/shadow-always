@@ -1,0 +1,6 @@
+.shadow-cljs/
+node_modules/
+script.js
+.cache
+.lsp/*.db
+.calva/output-window/

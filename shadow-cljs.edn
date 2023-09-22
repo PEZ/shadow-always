@@ -1,0 +1,10 @@
+{:source-paths ["src"]
+ :builds
+ {:script
+  {:target :node-script
+   :devtools {:watch-dir "resources/public"
+              :hud #{:errors :progress}
+              :ignore-warnings true}
+   :main demo.always/main
+   :output-to "script.js"
+   :build-hooks [(demo.user/print-compiled-files)]}}}
